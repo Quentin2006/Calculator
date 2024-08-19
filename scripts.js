@@ -14,7 +14,7 @@ function divide(num1, num2) {
   return num1 / num2;
 }
 
-function calculate() {
+function operate() {
   let num1 = prompt("Enter your number");
   let operation = prompt("Enter your operation");
   let num2 = prompt("Enter your number");
