@@ -27,6 +27,8 @@ function operate() {
     case operation == "*":
       return multiply(num1, num2);
     case operation == "/":
-      return returndivide(num1, num2);
+      return divide(num1, num2);
   }
 }
+
+console.log(operate());
