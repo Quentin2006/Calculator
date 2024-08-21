@@ -1,16 +1,14 @@
-@font-face {
-  font-family: "digital-mono";
-  src: url("./digital-7\ \(mono\).ttf");
-}
-
 * {
-  font-family: "digital-mono";
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin: 0;
   padding: 0;
-  background-color: darkslategray;
+  background-color: #000000;
 }
 
 .container {
@@ -32,22 +30,38 @@ body {
   flex: 1; /* Makes each row expand equally */
 }
 
+.num {
+  background-color: #333333;
+  color: #ffffff;
+}
+
+.operators {
+  background-color: #ff9f0a;
+  color: #ffffff;
+}
+
+.misc {
+  background-color: #A5A5A5;
+  color: #000000
+}
+
 button {
   flex: 1; /* Makes each button fill its parent row equally */
   margin: 5px; /* Adds space between buttons */
-  font-size: 75px; /* Adjust for readable button text */
+  font-size: 30px; /* Adjust for readable button text */
+  border: none;
+  border-radius: 200px;
+
 }
 
-.history {
-  height: 25px;
-  background-color: bisque;
-}
 .display {
   height: 75px;
-  background-color: azure;
+  background-color: #000000;
+  color: #ffffff;
   display: flex;
   align-items: center;
   justify-content: end;
   font-size: 75px;
   padding: 5px;
 }
+
