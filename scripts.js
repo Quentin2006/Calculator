@@ -27,47 +27,82 @@ function operate(num1, operation, num2) {
   }
 }
 
-let nums = [];
+let operationSelected = false;
 let operation;
-
+let num1 = "";
+let num2 = "";
 function populateDisplay(value) {
   const display = document.querySelector(".display");
   let operations = ["addition", "subtraction", "multiplacation", "division"];
+  let nums = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 
-  if (typeof value === "number") {
-    // adds num to nums array
-    nums.push(value);
-    // adds num to screen
-    console.log(display.textContent.split("").length);
-    if (operation != undefined && display.textContent.split("").length >= 1) {
-      display.textContent = value;
-    } else display.textContent += value;
-  } else if (value === "clear") {
-    // clears display and resets nums array
-    display.textContent = "";
-    nums.length = 0;
-  } else if (value === "delete") {
-    // makes display value into an array, removes last value,
-    // and combines array into string
-    let tempDisplay = display.textContent;
-    tempDisplay = tempDisplay.split("");
-    tempDisplay.pop();
-    display.textContent = tempDisplay.join("");
-  } else if (value === "plus-minus") {
-    display.textContent = display.textContent * -1;
-  } else if (value === "decimal") {
-    display.textContent += ".";
-  } else if (operations.includes(value)) {
-    operation = value;
-    if (nums.length >= 2) {
-      nums[0] = operate(+nums[0], operation, +nums[1]);
-      nums.length = 1;
-      display.textContent = nums[0];
+  if (nums.includes(value)) {
+    if (num1 === "" || !operationSelected) {
+      num1 += value;
+      display.textContent = num1
     }
-    console.log(value, nums);
+    else {
+      num2 += value;
+      display.textContent = num2
+    }
+
+  } else if (operations.includes(value)) {
+    operationSelected = true;
+    if (num1 != "" && num2 != "") {
+      let product = operate(+num1, operation, +num2);
+
+      num1 = product;
+      num2 = "";
+
+      display.textContent = num1;
+    }     
+    operation = value;
+
   } else if (value === "equals") {
-    nums[0] = operate(+nums[0], operation, +nums[1]);
-    nums.length = 1;
-    display.textContent = nums[0];
+
+    let product = operate(+num1, operation, +num2);
+
+    num1 = product;
+    num2 = "";
+
+    display.textContent = num1
+  } else if (value === "clear") {
+    operationSelected = false
+    operation = undefined
+    num1 = ""
+    num2 = ""
+    display.textContent = ""
+  } else if (value === "delete") {
+    if (num2 === "") {
+      num1 = num1.split("")
+      num1.pop()
+      num1 = num1.join("")
+      display.textContent = num1
+
+    } else  {
+      num2 = num2.split("")
+      num2.pop()
+      num2 = num2.join("")
+      display.textContent = num2
+    }
+
+  } else if (value === "plus-minus") {
+    if (num2 === "") {
+      num1 = num1 * -1
+      display.textContent = num1
+
+    } else  {
+      num2 = num2 * -1
+      display.textContent = num2
+    }
+  } else if (value === "decimal") {
+    if (num2 === "") {
+      num1 += '.'
+      display.textContent = num1
+
+    } else  {
+      num2 += '.'
+      display.textContent = num2
+    }
   }
 }
