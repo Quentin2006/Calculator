@@ -1,3 +1,53 @@
+@font-face {
+  font-family: "digital-mono";
+  src: url("./digital-7\ \(mono\).ttf");
+}
+
+* {
+  font-family: "digital-mono";
+}
+
 body {
-    background-color: black;
+  margin: 0;
+  padding: 0;
+  background-color: darkslategray;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* Ensures the container fills the full viewport height */
+}
+
+.calc {
+  height: 600px;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  display: flex;
+  flex: 1; /* Makes each row expand equally */
+}
+
+button {
+  flex: 1; /* Makes each button fill its parent row equally */
+  margin: 5px; /* Adds space between buttons */
+  font-size: 75px; /* Adjust for readable button text */
+}
+
+.history {
+  height: 25px;
+  background-color: bisque;
+}
+.display {
+  height: 75px;
+  background-color: azure;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  font-size: 75px;
+  padding: 5px;
 }
