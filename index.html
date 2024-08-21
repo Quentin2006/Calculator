@@ -7,6 +7,39 @@
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
+    <div class="calc">
+      <div class="display"></div>
+      <div class="row">
+        <button class="clear" onclick="populateDisplay('clear')">AC</button>
+        <button class="delete" onclick="populateDisplay('delete')">DEL</button>
+        <button class="plus-minus" onclick="populateDisplay('plus-minus')">+-</button>
+        <button class="divide" onclick="populateDisplay('division')">/</button>
+      </div>
+      <div class="row">
+        <button class="seven" onclick="populateDisplay(7)">7</button>
+        <button class="eight" onclick="populateDisplay(8)">8</button>
+        <button class="nine" onclick="populateDisplay(9)">9</button>
+        <button class="multiply" onclick="populateDisplay('multiplacation')">*</button>
+      </div>
+      <div class="row">
+        <button class="four" onclick="populateDisplay(4)">4</button>
+        <button class="five" onclick="populateDisplay(5)">5</button>
+        <button class="six" onclick="populateDisplay(6)">6</button>
+        <button class="subtract" onclick="populateDisplay('subtraction')">-</button>
+      </div>
+      <div class="row">
+        <button class="one" onclick="populateDisplay(1)">1</button>
+        <button class="two" onclick="populateDisplay(2)">2</button>
+        <button class="three" onclick="populateDisplay(3)">3</button>
+        <button class="add" onclick="populateDisplay('addition')">+</button>
+      </div>
+      <div class="row">
+        <button class="zero" onclick="populateDisplay(0)">0</button>
+        <button class="decimal" onclick="populateDisplay('decimal')">.</button>
+        <button class="equals" onclick="populateDisplay('equals')">=</button>
+      </div>
+    </div>
+
     <script src="./scripts.js"></script>
   </body>
 </html>
